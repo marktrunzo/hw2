@@ -69,15 +69,52 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# TODO!
+studio.destroy_all
+movie.destroy_all
+role.destroy_all
+actor.destroy_all
+Rails.logger.info "------------------------"
+Rails.logger.info "----- FRESH START! -----"
+Rails.logger.info "------------------------"
 
 # Generate models and tables, according to the domain model.
 # TODO!
+##Done in Terminal**********************************
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
-# TODO!
+studio_warner = studio.find_by({ "name" => "Warner Bros."})
 
+#Enter the movie data
+movie = movie.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = 2005
+movie["rated"] = "PG-13"
+movie["studio_id"] = studio_warner["id"]
+movie.save
+
+movie = movie.new
+movie["title"] = "The Dark Knight"
+movie["year_released"] = 2008
+movie["rated"] = "PG-13"
+movie["studio_id"] = studio_warner["id"]
+movie.save
+
+movie = movie.new
+movie["title"] = "The Dark Knight Rises"
+movie["year_released"] = 2012
+movie["rated"] = "PG-13"
+movie["studio_id"] = studio_warner["id"]
+movie.save
+
+#Enter the studio data
+studio = studio.new
+studio["name"] = "Warner Bros."
+studio.save
+
+#Enter the actor data
+actor = actor.new
+actor["name"] = "Christian Bale"
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
