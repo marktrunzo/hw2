@@ -115,6 +115,53 @@ studio.save
 #Enter the actor data
 actor = actor.new
 actor["name"] = "Christian Bale"
+actor.save
+
+actor = actor.new
+actor["name"] = "Michael Cane"
+actor.save
+
+actor = actor.new
+actor["name"] = "Liam Neeson"
+actor.save
+
+actor = actor.new
+actor["name"] = "Kaite Holmes"
+actor.save
+
+actor = actor.new
+actor["name"] = "Gary Oldman"
+actor.save
+
+actor = actor.new
+actor["name"] = "Heath Ledger"
+actor.save
+
+actor = actor.new
+actor["name"] = "Aaron Eckhart"
+actor.save
+
+actor = actor.new
+actor["name"] = "Maggie Gyllenhaal"
+actor.save
+
+actor = actor.new
+actor["name"] = "Tom Hardy"
+actor.save
+
+actor = actor.new
+actor["name"] = "Joseph Gordon-Levitt"
+actor.save
+
+actor = actor.new
+actor["name"] = "Anne Hathaway"
+actor.save
+
+#Enter the Character Data
+role = role.new
+role["character_name"] =
+role["movie_id"] = 
+role["actor_id"] =
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
