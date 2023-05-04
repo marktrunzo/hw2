@@ -324,3 +324,4 @@ for role in roles
     role = role["character_name"]
     puts "#{movie_title}\t\t#{actor_name}\t\t#{role}"
 end
+
