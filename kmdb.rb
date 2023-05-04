@@ -69,10 +69,12 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-studio.destroy_all
-movie.destroy_all
-role.destroy_all
-actor.destroy_all
+
+Movie.destroy_all
+Role.destroy_all
+Actor.destroy_all
+Studio.destroy_all
+
 Rails.logger.info "------------------------"
 Rails.logger.info "----- FRESH START! -----"
 Rails.logger.info "------------------------"
@@ -83,82 +85,83 @@ Rails.logger.info "------------------------"
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
-studio_warner = studio.find_by({ "name" => "Warner Bros."})
+
+#Enter the studio data
+studio = Studio.new
+studio["name"] = "Warner Bros."
+studio.save
+
+studio_warner = Studio.find_by({ "name" => "Warner Bros."})
 
 #Enter the movie data
-movie = movie.new
+movie = Movie.new
 movie["title"] = "Batman Begins"
 movie["year_released"] = 2005
 movie["rated"] = "PG-13"
 movie["studio_id"] = studio_warner["id"]
 movie.save
 
-movie = movie.new
+movie = Movie.new
 movie["title"] = "The Dark Knight"
 movie["year_released"] = 2008
 movie["rated"] = "PG-13"
 movie["studio_id"] = studio_warner["id"]
 movie.save
 
-movie = movie.new
+movie = Movie.new
 movie["title"] = "The Dark Knight Rises"
 movie["year_released"] = 2012
 movie["rated"] = "PG-13"
 movie["studio_id"] = studio_warner["id"]
 movie.save
 
-#Enter the studio data
-studio = studio.new
-studio["name"] = "Warner Bros."
-studio.save
-
 #Enter the actor data
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Christian Bale"
 actor.save
 
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Michael Cane"
 actor.save
 
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Liam Neeson"
 actor.save
 
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Kaite Holmes"
 actor.save
 
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Gary Oldman"
 actor.save
 
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Heath Ledger"
 actor.save
 
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Aaron Eckhart"
 actor.save
 
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Maggie Gyllenhaal"
 actor.save
 
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Tom Hardy"
 actor.save
 
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Joseph Gordon-Levitt"
 actor.save
 
-actor = actor.new
+actor = Actor.new
 actor["name"] = "Anne Hathaway"
 actor.save
 
 #Enter the Character Data
-role = role.new
+role = Role.new
 role["character_name"] =
 role["movie_id"] = 
 role["actor_id"] =
