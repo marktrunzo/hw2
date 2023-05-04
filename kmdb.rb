@@ -292,6 +292,15 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+batman_studio = Movie.where({ "studio_id" => studio_warner["id"] })
+
+for movie in batman_studio
+    movie_name = movie["title"]
+    year = movie["year_released"]
+    studio = movie["studio_id"]
+    rating = movie["rated"]
+    puts "#{movie_name}     #{year}     #{rating}        #{studio}"
+end
 
 # Prints a header for the cast output
 puts ""
