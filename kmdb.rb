@@ -292,14 +292,18 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
-batman_studio = Movie.where({ "studio_id" => studio_warner["id"] })
 
-for movie in batman_studio
-    movie_name = movie["title"]
+#define all the movies
+movies = Movie.all
+
+#loop through printing movie with it's associated data. 
+for movie in movies
+    studio = Studio.find_by( "id" => movie["studio_id"] )
+    studio_name = studio["name"]
+    title = movie["title"]
     year = movie["year_released"]
-    studio = movie["studio_id"]
     rating = movie["rated"]
-    puts "#{movie_name}     #{year}     #{rating}        #{studio}"
+    puts "#{title}\t\t#{year}\t#{rating}\t#{studio_name}"
 end
 
 # Prints a header for the cast output
@@ -310,3 +314,13 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+roles = Role.all
+
+for role in roles
+    movie = Movie.find_by( "id" => role["movie_id"])
+    movie_title = movie["title"]
+    actor = Actor.find_by( "id" => role["actor_id"])
+    actor_name = actor["name"]
+    role = role["character_name"]
+    puts "#{movie_title}\t\t#{actor_name}\t\t#{role}"
+end
