@@ -116,9 +116,9 @@ movie["studio_id"] = studio_warner["id"]
 movie.save
 
 #create the variables for the movies so that the id's can be used
-batman_begins = Movie.find_by({ "name" => "Batman Begins"})
-dark_knight = Movie.find_by({ "name" => "Dark Knight"})
-dark_knight_rises = Movie.find_by({ "name" => "Dark Knight Rises"})
+batman_begins = Movie.find_by({ "title" => "Batman Begins"})
+dark_knight = Movie.find_by({ "title" => "The Dark Knight"})
+dark_knight_rises = Movie.find_by({ "title" => "The Dark Knight Rises"})
 
 #Enter the actor data
 actor = Actor.new
@@ -140,7 +140,7 @@ actor.save
 ln = Actor.find_by({ "name" => "Liam Neeson"})
 
 actor = Actor.new
-actor["name"] = "Kaite Holmes"
+actor["name"] = "Katie Holmes"
 actor.save
 
 kh = Actor.find_by({ "name" => "Katie Holmes"})
@@ -288,6 +288,7 @@ role.save
 puts "Movies"
 puts "======"
 puts ""
+
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
